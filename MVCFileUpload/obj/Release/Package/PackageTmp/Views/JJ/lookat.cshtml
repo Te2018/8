@@ -1,0 +1,21 @@
+﻿@*@model IEnumerable<MVCFileUpload.Models.Accept>*@
+@model MVCFileUpload.Models.Accept
+@{    ViewBag.Title = "lookat";}
+<h2>lookat</h2>
+<p>    @Html.ActionLink("Create New", "Create")</p>
+<table class="table">
+    <tr>        <th>            @Html.DisplayNameFor(model => model.acceptAstring)        </th>        <th></th>    </tr>
+    <tr>        <td>            @Html.DisplayFor(model => model.acceptAstring)        </td>
+  <td>@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) | @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id })        </td>  </tr>
+@*@foreach (var item in Model) {
+    <tr>        <td>            @Html.DisplayFor(modelItem => item.acceptAstring)        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}*@
+
+</table>

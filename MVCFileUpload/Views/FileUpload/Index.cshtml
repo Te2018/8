@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVCFileUpload.Controllers.DownloadFile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("多檔上傳", "Upload", null, new { @class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Filename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filesize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UploadTime)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Filename, "Download", new { Filename=item.Filename})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filesize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadTime)
+        </td>
+    </tr>
+}
+
+</table>
